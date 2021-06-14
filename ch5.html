@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5장 유저 조작과 연동</title>
+</head>
+<body>
+  <div id="app">
+    간단한 계산기
+    <div>
+      <input type="number" v-model.number="leftOperand">
+      <input type="number" v-model.number="rightOperand">
+    </div>
+    <div>
+      <button type="button" v-on:click="add">더하기</button>
+      <button type="button" v-on:click="minus">빼기</button>
+      <button type="button" v-on:click="multiply">곱하기</button>
+      <button type="button" v-on:click="divide">나누기</button>
+    </div>
+    <p>결과는 {{ result }} 입니다.</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        leftOperand: 0,
+        rightOperand: 0,
+        result: 0,
+      },
+      methods: {
+        add(){
+          this.result = this.leftOperand + this.rightOperand;
+        },
+        minus(){
+          this.result = this.leftOperand - this.rightOperand;
+        },
+        multiply(){
+          this.result = this.leftOperand * this.rightOperand;
+        },
+        divide(){
+          this.result = this.leftOperand / this.rightOperand;
+        },
+      }
+    })
+  </script>
+</body>
+</html>

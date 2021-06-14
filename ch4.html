@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4장 유저 입력을 연결할 때</title>
+  <style>
+    label {display: block;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>입력폼 활용</h1>
+    <div>이름: <input type="text" v-model.lazy="name"></div>
+    <div>좋아하는 색은?</div>
+    <label for="a">
+      <input id="a" type="radio" v-model="color" name="color" value="red">
+      빨강
+    </label>
+    <label for="b">
+      <input id="b" type="radio" v-model="color" name="color" value="green">
+      녹색
+    </label>
+    <label for="c">
+      <input id="c" type="radio" v-model="color" name="color" value="blue">
+      파랑색
+    </label>
+    <label for="d">
+      <input id="d" type="radio" v-model="color" name="color" value="yellow">
+      노란색
+    </label>
+    <label for="e">
+      <input id="e" type="radio" v-model="color" name="color" value="gray">
+      회색
+    </label>
+    <p :style="{color: color}">내 이름은 {{ name || '입력 중' }}이고, 좋아하는 색은 {{ color || '고르는 중' }}입니다.</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        name: '',
+        color: '',
+      }
+    })
+  </script>
+</body>
+</html>

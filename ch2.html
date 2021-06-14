@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2장 데이터 표시</title>
+</head>
+<body>
+  <div id="app">
+    <h1>다양한 데이터의 출력</h1>
+    <p>{{ myText }}</p>
+    <p v-text="myText"></p>
+    <div v-html="myHtmlText"></div>
+    <div>숫자: {{ myNumber }}</div>
+    <div>숫자: {{ myBool }}</div>
+    <div>숫자: {{ myArray }}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        myText: 'Vue를 배워봅시다. 이렇게 그냥 출력할 수도 있고',
+        myHtmlText: '<h3> 태그를 넣어서 출력할 수 도 있습니다.</h3>',
+        myNumber: 12345,
+        myBool: true,
+        myArray: [1,2,3,4,5],
+        myObject: [
+          {name: '다즐링', price: 600},
+          {name: '얼그레이', price: 500},
+          {name: '실론', price: 500},
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

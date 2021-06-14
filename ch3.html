@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3장</title>
+  <style>
+    .strike-through {
+      text-decoration: line-through;
+      color: lightcoral;
+    }
+
+    .dark {
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p :style="{color: redColor}">인라인 스타일로 빨강</p>
+    <p
+      :style="{
+        color: redColor,
+        fontSize: bigFont
+      }"
+      :class="[{
+        'strike-through': true,
+        'dark': true
+      }]"
+    >인라인 스타일로 빨강 + 글자 크기 150%</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        redColor: 'red',
+        bigFont: '150%',
+      }
+    })
+  </script>
+</body>
+</html>
